@@ -12,7 +12,7 @@ import pl.com.altar.dddlayerd.order.client.vm.OrderDetailsVM;
 import pl.com.altar.dddlayerd.order.domain.ports.OrderQueryPort;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/orders")
 @AllArgsConstructor
 public class OrderQueryController {
 

@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Table(name = "order_table")
-public class Order {
+class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +33,7 @@ public class Order {
 
     private OrderState orderState;
 
-    public Order(String name, Money price, OrderState orderState) {
+    Order(String name, Money price, OrderState orderState) {
         this.name = name;
         this.price = price;
         this.orderState = orderState;
@@ -42,11 +42,11 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    public static Order createOrder(CreateOrderCommand command) {
+    static Order createOrder(CreateOrderCommand command) {
         return new Order(command.getName(), Money.ZERO, OrderState.DRAFT);
     }
 
-    public void addItem(AddItemCommand command) {
+    void addItem(AddItemCommand command) {
         checkIfDraft();
         OrderItem newItem = OrderItem.createItem(
                 command.getName(),
@@ -58,13 +58,13 @@ public class Order {
         recalculatePrice();
     }
 
-    public void submit() {
+    void submit() {
         checkIfDraft();
         this.orderState = OrderState.SUBMITTED;
         this.submitDate = new Timestamp(System.currentTimeMillis());
     }
 
-    public void archive() {
+    void archive() {
         this.orderState = OrderState.ARCHIVED;
     }
 
@@ -79,7 +79,7 @@ public class Order {
         orderItems.forEach(item -> this.price.add(item.getPrice()));
     }
 
-    public void clearOrderItems() {
+    void clearOrderItems() {
         this.orderItems.clear();
         recalculatePrice();
     }

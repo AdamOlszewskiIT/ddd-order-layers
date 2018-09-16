@@ -10,7 +10,7 @@ interface OrderRepository extends Repository<Order, Long> {
 
     Order save(Order order);
 
-    Optional<Order> getOne(Long id);
+    Optional<Order> findById(Long id);
 
     List<Order> findAll();
 

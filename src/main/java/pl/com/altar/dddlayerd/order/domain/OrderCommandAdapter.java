@@ -36,7 +36,7 @@ class OrderCommandAdapter implements OrderCommandPort {
 
     @Override
     public OrderDetailsVM addItem(Long orderId, AddItemCommand addItemCommand) {
-        Order foundedOrder = orderRepository.getOne(orderId)
+        Order foundedOrder = orderRepository.findById(orderId)
                 .orElseThrow(() -> new OderNotFoundException(orderId));
         foundedOrder.addItem(addItemCommand);
         val persistedOrder = orderRepository.save(foundedOrder);
@@ -47,7 +47,7 @@ class OrderCommandAdapter implements OrderCommandPort {
 
     @Override
     public void deleteOrder(Long orderId) {
-        Order foundedOrder = orderRepository.getOne(orderId)
+        Order foundedOrder = orderRepository.findById(orderId)
                 .orElseThrow(() -> new OderNotFoundException(orderId));
         foundedOrder.archive();
         orderRepository.save(foundedOrder);

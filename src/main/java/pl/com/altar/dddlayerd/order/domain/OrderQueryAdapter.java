@@ -22,7 +22,7 @@ class OrderQueryAdapter implements OrderQueryPort {
 
     @Override
     public OrderDetailsVM findOrder(Long orderId) {
-        Optional<Order> orderOptional = orderRepository.getOne(orderId);
+        Optional<Order> orderOptional = orderRepository.findById(orderId);
         return mapDetails(orderOptional.orElseThrow(() -> new OderNotFoundException(orderId)));
     }
 
