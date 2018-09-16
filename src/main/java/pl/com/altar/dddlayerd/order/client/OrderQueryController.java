@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.com.altar.dddlayerd.order.client.vm.OrderVM;
+import pl.com.altar.dddlayerd.order.client.vm.OrderDetailsVM;
 import pl.com.altar.dddlayerd.order.domain.ports.OrderQueryPort;
 
 @RestController
@@ -19,12 +19,9 @@ public class OrderQueryController {
     private final OrderQueryPort orderQueryPort;
 
     @GetMapping
-    public ResponseEntity<OrderVM> getOrder(@RequestParam("orderId") Long orderId) {
+    public ResponseEntity<OrderDetailsVM> getOrder(@RequestParam("orderId") Long orderId) {
         val orderVM = orderQueryPort.findOrder(orderId);
         return new ResponseEntity<>(orderVM, HttpStatus.OK);
     }
-
-
-
 
 }

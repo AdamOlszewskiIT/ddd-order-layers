@@ -1,4 +1,4 @@
-package pl.com.altar.dddlayerd.order.client.client_exception;
+package pl.com.altar.dddlayerd.order.client.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

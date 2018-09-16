@@ -12,4 +12,6 @@ public interface OrderCommandPort {
     OrderDetailsVM addItem(Long orderId, AddItemCommand addItemCommand);
 
     void deleteOrder(Long orderId);
+
+    void deleteAll();
 }

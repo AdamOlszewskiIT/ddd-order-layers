@@ -1,11 +1,14 @@
 package pl.com.altar.dddlayerd.order.client.command;
 
-import lombok.NonNull;
 import lombok.Value;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.NotNull;
 
 
+@Validated
 @Value
 public class CreateOrderCommand {
-    @NonNull
+    @NotNull
     private String name;
 }

@@ -8,17 +8,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 import pl.com.altar.dddlayerd.order.client.command.AddItemCommand;
+import pl.com.altar.dddlayerd.order.client.command.CreateOrderCommand;
 import pl.com.altar.dddlayerd.order.client.vm.OrderDetailsVM;
+import pl.com.altar.dddlayerd.order.client.vm.OrderVM;
 import pl.com.altar.dddlayerd.order.domain.ports.OrderCommandPort;
 import pl.com.altar.dddlayerd.order.domain.ports.OrderQueryPort;
-import pl.com.altar.dddlayerd.order.client.command.CreateOrderCommand;
-import pl.com.altar.dddlayerd.order.client.vm.OrderVM;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OrderServiceAdapterTest {
+public class OrderCommandAdapterTest {
 
     @Autowired
     private OrderQueryPort orderQueryPort;
@@ -48,7 +48,7 @@ public class OrderServiceAdapterTest {
         //then
         Long numberOfOrders = orderRepository.count();
         assertThat(numberOfOrders).isOne();
-        OrderVM foundedOrder = orderQueryPort.findOrder(orderVM.getId());
+        OrderDetailsVM foundedOrder = orderQueryPort.findOrder(orderVM.getId());
         assertThat(foundedOrder).isNotNull();
         assertThat(foundedOrder.getOrderState()).isEqualTo(OrderState.DRAFT.name());
     }

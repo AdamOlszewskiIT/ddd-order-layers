@@ -1,6 +1,5 @@
 package pl.com.altar.dddlayerd.order.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 import lombok.val;
 

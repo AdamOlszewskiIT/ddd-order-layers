@@ -2,7 +2,6 @@ package pl.com.altar.dddlayerd.order.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.PackagePrivate;
 
 import javax.persistence.*;
 
@@ -10,7 +9,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Table(name = "order_item_table")
-@PackagePrivate
 class OrderItem {
 
     @Id
