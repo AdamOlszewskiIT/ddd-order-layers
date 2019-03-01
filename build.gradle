@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.4.RELEASE'
+        springBootVersion = '2.1.3.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -17,7 +17,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'pl.com.altar'
 version = '0.0.1'
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -37,7 +37,7 @@ dependencies {
     compile("io.springfox:springfox-swagger2:${swagger}")
     compile("io.springfox:springfox-swagger-ui:${swagger}")
     compileOnly('org.projectlombok:lombok')
-
+    annotationProcessor('org.projectlombok:lombok')
     // test dependencies
     testCompileOnly('org.projectlombok:lombok')
     testCompile "com.h2database:h2"

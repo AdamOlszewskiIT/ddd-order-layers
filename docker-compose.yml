@@ -1,0 +1,36 @@
+version: '3.7'
+networks:
+  ddd-network:
+    driver: bridge
+volumes:
+  ddd_postgres_data:
+
+services:
+  ddd-app:
+    build: .
+    container_name: ddd-app
+    restart: on-failure
+    networks:
+      - ddd-network
+    depends_on:
+      - postgres
+    ports:
+      - "443:443"
+    environment:
+      - DDD_JDBC_USERNAME=admin
+      - DDD_JDBC_PASSWORD=admin
+      - DDD_JDBC_URL=jdbc:postgresql://ddd-postgres:5432/ddd-db
+  postgres:
+    image: postgres
+    container_name: ddd-postgres
+    restart: on-failure
+    volumes:
+      - ddd_postgres_data:/var/lib/postgresql/data
+    networks:
+      - ddd-network
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: ddd-db
+    ports:
+      - "8900:5432"
