@@ -15,7 +15,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "443:443"
+      - "8067:8067"
     environment:
       - DDD_JDBC_USERNAME=admin
       - DDD_JDBC_PASSWORD=admin
