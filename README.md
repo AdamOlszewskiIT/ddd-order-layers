@@ -1,5 +1,6 @@
 # DDD E-Commerce
-##Introduction
+## Introduction
+
 This project shows DDD approach to build e-commerce application with the the four layers architecture. Application is divided into three main bounded contexts, i.e. 
 * **Sales**,
 * **Shipping**,
@@ -15,18 +16,18 @@ Each bounded context is divided into four layers which are show on the picture a
 * **Domain**,
 * **Infrastructure**.
 
-###Client
+### Client
 Client layer allow to communicate with application in CQRS style. To change state of application Client must receive valid command object.
 
 To read state of application Client must receive a valid query object.
 
-###Application
+### Application
 Application layer orchestrate objects from different domains to accomplish certain user story.
 
-###Domain
+### Domain
 Domain is the core of the application and manage business logic. Domain is fully independent of framework so it can be moved to another project without code refactor.
 
-###Infrastructure
+### Infrastructure
 Infrastructure provide tools, repositories, queues etc. for other layers. This is achieved by port-adapter pattern where all other layers communicate with others by ports (interfaces) and infrastructure provide adapter (implementation) for each port.
 Ports can be divided into inner and outer ports, where former are implemented in domains an latter are implemented in infrastructure.
 
@@ -51,7 +52,7 @@ and now you can run this image by
 
     docker run -d -p 8067:8067 ddd-layers
     
-##Building and running with docker-compose
+## Building and running with docker-compose
 To build this application to docker image and run it with docker-compose run in console
 
     docker-compose up -d --build
