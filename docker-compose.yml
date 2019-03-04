@@ -17,10 +17,11 @@ services:
     ports:
       - "8067:8067"
     environment:
-      DATABSE_USERNAME: admin
+      DATABASE_USERNAME: admin
       DATABASE_PASSWORD: admin
       DATABASE_URL: jdbc:postgresql://ddd-postgres:5432/ddd-db
       DATABASE_DRIVER: org.hibernate.dialect.PostgreSQLDialect
+      DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQL9Dialect
       SPRING_PROFILES_ACTIVE: prod
   postgres:
     image: postgres
