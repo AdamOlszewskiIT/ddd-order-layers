@@ -2,14 +2,11 @@ package pl.com.altar.ecommerce.sales.domain.order;
 
 
 import lombok.AllArgsConstructor;
-import pl.com.altar.ecommerce.sales.client.vm.OrderDetailsVM;
-import pl.com.altar.ecommerce.sales.client.vm.OrderVM;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderQueryPort;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderRepositoryPort;
 import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @AllArgsConstructor

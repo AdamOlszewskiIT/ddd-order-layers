@@ -3,9 +3,9 @@ package pl.com.altar.ecommerce.sales.domain.order;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.com.altar.ecommerce.sales.domain.order.projections.OrderItemProjection;
 import pl.com.altar.ecommerce.shared.Money;
 import pl.com.altar.ecommerce.shared.Quantity;
-import pl.com.altar.ecommerce.sales.domain.order.projections.OrderItemProjection;
 
 @NoArgsConstructor
 @AllArgsConstructor

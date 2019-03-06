@@ -3,8 +3,8 @@ package pl.com.altar.ecommerce.sales.infrastructure.repository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.com.altar.ecommerce.sales.client.exception.OderNotFoundException;
-import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderRepositoryPort;
+import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
 
 import java.util.ArrayList;
 import java.util.List;

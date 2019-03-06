@@ -1,8 +1,8 @@
 package pl.com.altar.ecommerce.sales.infrastructure;
 
 import org.springframework.stereotype.Service;
-import pl.com.altar.ecommerce.shared.BaseEvent;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderEventPublisher;
+import pl.com.altar.ecommerce.shared.BaseEvent;
 
 
 @Service

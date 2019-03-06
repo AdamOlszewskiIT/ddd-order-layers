@@ -2,19 +2,15 @@ package pl.com.altar.ecommerce.sales.domain.order;
 
 
 import lombok.AllArgsConstructor;
-import org.springframework.transaction.annotation.Transactional;
 import pl.com.altar.ecommerce.sales.client.command.AddItemCommand;
-import pl.com.altar.ecommerce.sales.client.exception.OderItemNotFoundException;
 import pl.com.altar.ecommerce.sales.domain.order.events.ItemAdded;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderCommandPort;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderEventPublisher;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderRepositoryPort;
 import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
 
-import java.util.Objects;
-
 @AllArgsConstructor
-@Transactional
+//@Transactional
 public class OrderCommandAdapter implements OrderCommandPort {
 
     private static final String ITEM_ADDED = "Item added";

@@ -2,19 +2,19 @@
 ## Introduction
 
 This project shows DDD approach to build e-commerce application with the the four layers architecture. Application is divided into three main bounded contexts, i.e. 
-* **Sales**,
-* **Shipping**,
-* **CRM**.
+*   **Sales**,
+*   **Shipping**,
+*   **CRM**.
 
 ...
 ## Architecture
 ![Layered architecture](./resources/layered.png?raw=true)
 
 Each bounded context is divided into four layers which are show on the picture above, i.e.
-* **Client**,
-* **Application**,
-* **Domain**,
-* **Infrastructure**.
+*   **Client**,
+*   **Application**,
+*   **Domain**,
+*   **Infrastructure**.
 
 ### Client
 Client layer allow to communicate with application in CQRS style. To change state of application Client must receive valid command object.
@@ -32,11 +32,11 @@ Infrastructure provide tools, repositories, queues etc. for other layers. This i
 Ports can be divided into inner and outer ports, where former are implemented in domains an latter are implemented in infrastructure.
 
 ## Technology stack
-* **JAVA 11**
-* **SPRING BOOT 2.x**
-* **RABBITMQ**
-* **DOCKER**
-* **DOCKER-COMPOSE**
+*   **JAVA 11**
+*   **SPRING BOOT 2.x**
+*   **RABBITMQ**
+*   **DOCKER**
+*   **DOCKER-COMPOSE**
 
 ## Building and running application
 To build and run this application go to root folder and run in console  

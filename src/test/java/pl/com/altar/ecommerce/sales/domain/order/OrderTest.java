@@ -1,14 +1,11 @@
 package pl.com.altar.ecommerce.sales.domain.order;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import pl.com.altar.ecommerce.sales.client.command.AddItemCommand;
 import pl.com.altar.ecommerce.sales.client.command.CreateOrderCommand;
 import pl.com.altar.ecommerce.shared.Money;
-
-import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

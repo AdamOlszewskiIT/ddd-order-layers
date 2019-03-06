@@ -3,9 +3,9 @@ package pl.com.altar.ecommerce.sales.infrastructure.repository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pl.com.altar.ecommerce.sales.domain.order.projections.OrderItemProjection;
 import pl.com.altar.ecommerce.shared.Money;
 import pl.com.altar.ecommerce.shared.Quantity;
-import pl.com.altar.ecommerce.sales.domain.order.projections.OrderItemProjection;
 
 import javax.persistence.*;
 
