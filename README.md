@@ -1,4 +1,7 @@
 # DDD E-Commerce
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5e6bdf9f1cce4b8eb3dec6c58bc93e92)](https://app.codacy.com/app/AdamOlszewskiIT/ddd-order-layers?utm_source=github.com&utm_medium=referral&utm_content=AdamOlszewskiIT/ddd-order-layers&utm_campaign=Badge_Grade_Dashboard)
+
 ## Introduction
 
 This project shows DDD approach to build e-commerce application with the the four layers architecture. Application is divided into three main bounded contexts, i.e. 
