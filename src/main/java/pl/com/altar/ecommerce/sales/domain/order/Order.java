@@ -40,10 +40,10 @@ class Order implements OrderProjection {
     private List<OrderItem> orderItems = new ArrayList<>();
 
     Order(CreateOrderCommand command) {
-        this(command.getName(), Money.ZERO(), DRAFT);
+        this(command.getName(), Money.zero(), DRAFT);
     }
 
-    void addItem(AddItemCommand command) {
+    protected void addItem(AddItemCommand command) {
         checkIfDraft();
         final var newItem = new OrderItem(
                 command.getName(),
@@ -54,13 +54,13 @@ class Order implements OrderProjection {
         recalculatePrice();
     }
 
-    void submit() {
+    protected void submit() {
         checkIfDraft();
         this.orderState = SUBMITTED;
         this.submitDate = new Timestamp(System.currentTimeMillis());
     }
 
-    void archive() {
+    protected void archive() {
         this.orderState = ARCHIVED;
     }
 
@@ -71,16 +71,16 @@ class Order implements OrderProjection {
     }
 
     private void recalculatePrice() {
-        this.price = Money.ZERO();
+        this.price = Money.zero();
         orderItems.forEach(item -> this.price = this.price.add(item.getTotalPrice()));
     }
 
-    void clearOrderItems() {
+    protected void clearOrderItems() {
         this.orderItems.clear();
         recalculatePrice();
     }
 
-     void removeOrderItem(Long itemId) {
+    protected void removeOrderItem(Long itemId) {
         final var numberOfItemsBeforeDeletion = this.getOrderItems().size();
         this.getOrderItems()
                 .removeIf(orderItem -> Objects.equals(orderItem.getId(), itemId));

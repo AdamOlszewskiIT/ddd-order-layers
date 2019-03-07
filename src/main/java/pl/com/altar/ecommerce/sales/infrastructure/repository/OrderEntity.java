@@ -29,7 +29,7 @@ public class OrderEntity implements OrderProjection {
     private String name;
 
     @Embedded
-    private Money price = Money.ZERO();
+    private Money price = Money.zero();
 
     private String serialNumber = UUID.randomUUID().toString();
 

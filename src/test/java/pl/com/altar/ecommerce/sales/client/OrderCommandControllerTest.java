@@ -58,7 +58,7 @@ public class OrderCommandControllerTest {
     private ObjectWriter objectWriter;
 
     @Before
-    public void setup() {
+    public void setUp() {
         OrderCommandController ctrl = new OrderCommandController(orderCommandPort, orderFactoryPort);
         this.mockMvc = MockMvcBuilders.standaloneSetup(ctrl)
                 .setCustomArgumentResolvers(pageableArgumentResolver)

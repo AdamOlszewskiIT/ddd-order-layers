@@ -10,10 +10,10 @@ import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class ModelMapper {
+public class ModelMapper {
 
 
-    static OrderVM map(OrderProjection order) {
+    public static OrderVM map(OrderProjection order) {
         return new OrderVM(
                 order.getId(),
                 order.getOrderStateName(),
@@ -23,13 +23,13 @@ class ModelMapper {
         );
     }
 
-    static List<OrderVM> map(List<OrderProjection> orderProjections) {
+    public static List<OrderVM> map(List<OrderProjection> orderProjections) {
         return orderProjections.stream()
                 .map(ModelMapper::map)
                 .collect(Collectors.toList());
     }
 
-    static OrderItemVM map(OrderItemProjection item) {
+    public static OrderItemVM map(OrderItemProjection item) {
         return new OrderItemVM(
                 item.getId(),
                 item.getName(),
@@ -38,7 +38,7 @@ class ModelMapper {
         );
     }
 
-    static OrderDetailsVM mapDetails(OrderProjection order) {
+    public static OrderDetailsVM mapDetails(OrderProjection order) {
         return new OrderDetailsVM(
                 order.getId(),
                 order.getOrderStateName(),

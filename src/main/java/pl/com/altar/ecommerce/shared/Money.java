@@ -16,8 +16,6 @@ public class Money implements Serializable {
 
     public static final Currency DEFAULT_CURRENCY = Currency.getInstance("EUR");
 
-    public static final Money ZERO = new Money(0);
-
     private BigDecimal denomination;
 
     private String currencyCode;
@@ -118,7 +116,7 @@ public class Money implements Serializable {
         return denomination.compareTo(other.denomination) <= 0;
     }
 
-    public static Money ZERO() {
+    public static Money zero() {
         return new Money(0);
     }
 

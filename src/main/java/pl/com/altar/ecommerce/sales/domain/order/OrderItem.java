@@ -18,7 +18,7 @@ class OrderItem implements OrderItemProjection {
 
     private Quantity quantity;
 
-    private Money price = Money.ZERO();
+    private Money price = Money.zero();
 
     private OrderItem(String name, Quantity quantity, Money price) {
         this.name = name;

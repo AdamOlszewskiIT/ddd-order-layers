@@ -56,5 +56,3 @@ and now you can run this image by
 To build this application to docker image and run it with docker-compose run in console
 
     docker-compose up -d --build
- 
-

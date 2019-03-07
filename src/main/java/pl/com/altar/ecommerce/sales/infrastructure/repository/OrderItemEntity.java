@@ -27,7 +27,7 @@ public class OrderItemEntity implements OrderItemProjection {
     private Quantity quantity;
 
     @Embedded
-    private Money price = Money.ZERO();
+    private Money price = Money.zero();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", nullable = false)

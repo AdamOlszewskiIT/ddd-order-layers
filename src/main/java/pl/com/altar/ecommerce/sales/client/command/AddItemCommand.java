@@ -15,10 +15,10 @@ public class AddItemCommand {
     @NotNull(message = "Name should not be empty")
     private String name;
     @DecimalMin(value = "0.0", message = "Price should be grater than zero")
-    double price;
+    private double price;
     @NotNull
     @Min(value = 1, message = "You have to add at least one item")
-    Integer quantity;
+    private Integer quantity;
 
     @SuppressWarnings("unused")
     /* Jackson serialization purpose only */
