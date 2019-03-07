@@ -30,7 +30,7 @@ class OrderItem implements OrderItemProjection {
         this(name, new Quantity(quantity), new Money(price));
     }
 
-    Money getTotalPrice() {
+    protected Money getTotalPrice() {
         return this.price.multiplyBy(this.quantity.getNumberOfElements());
     }
 

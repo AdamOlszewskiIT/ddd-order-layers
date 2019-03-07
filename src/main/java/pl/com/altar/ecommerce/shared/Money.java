@@ -54,7 +54,7 @@ public class Money implements Serializable {
     }
 
     public Money multiplyBy(double multiplier) {
-        return multiplyBy(new BigDecimal(multiplier));
+        return multiplyBy(parseDoubleToBC(multiplier));
     }
 
     public Money multiplyBy(BigDecimal multiplier) {
@@ -76,25 +76,7 @@ public class Money implements Serializable {
         return new Money(denomination.subtract(money.denomination), determineCurrencyCode(money));
     }
 
-    /**
-     * Currency is compatible if the same or either money object has zero value.
-     */
-    private boolean compatibleCurrency(Money money) {
-        return isZero(denomination) || isZero(money.denomination) || currencyCode.equals(money.getCurrencyCode());
-    }
 
-    private boolean isZero(BigDecimal testedValue) {
-        return BigDecimal.ZERO.compareTo(testedValue) == 0;
-    }
-
-    /**
-     * @return currency from this object or otherCurrencyCode. Preferred is the
-     *         one that comes from Money that has non-zero value.
-     */
-    private Currency determineCurrencyCode(Money otherMoney) {
-        String resultingCurrenctCode = isZero(denomination) ? otherMoney.currencyCode : currencyCode;
-        return Currency.getInstance(resultingCurrenctCode);
-    }
 
     public String getCurrencyCode() {
         return currencyCode;
@@ -144,5 +126,22 @@ public class Money implements Serializable {
             return false;
         Money other = (Money) obj;
         return compatibleCurrency(other) && Objects.equals(denomination, other.denomination);
+    }
+
+    private boolean compatibleCurrency(Money money) {
+        return isZero(denomination) || isZero(money.denomination) || currencyCode.equals(money.getCurrencyCode());
+    }
+
+    private boolean isZero(BigDecimal testedValue) {
+        return BigDecimal.ZERO.compareTo(testedValue) == 0;
+    }
+
+    private Currency determineCurrencyCode(Money otherMoney) {
+        String resultingCurrentCode = isZero(denomination) ? otherMoney.currencyCode : currencyCode;
+        return Currency.getInstance(resultingCurrentCode);
+    }
+
+    private BigDecimal parseDoubleToBC(double value) {
+        return new BigDecimal(String.valueOf(value));
     }
 }

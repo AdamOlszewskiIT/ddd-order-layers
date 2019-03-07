@@ -40,7 +40,7 @@ public class OrderEntity implements OrderProjection {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<OrderItemEntity> orderItems = new ArrayList<>();
 
-    static OrderItemEntity of(OrderItemProjection oip, OrderEntity oe) {
+    protected static OrderItemEntity of(OrderItemProjection oip, OrderEntity oe) {
         return new OrderItemEntity(
                 oip.getId(),
                 oip.getName(),

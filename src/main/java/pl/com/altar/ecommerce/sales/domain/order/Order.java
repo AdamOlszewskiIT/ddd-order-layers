@@ -30,14 +30,13 @@ class Order implements OrderProjection {
     private String serialNumber = UUID.randomUUID().toString();
     private Timestamp submitDate;
     private OrderState orderState;
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     private Order(String name, Money price, OrderState orderState) {
         this.name = name;
         this.price = price;
         this.orderState = orderState;
     }
-
-    private List<OrderItem> orderItems = new ArrayList<>();
 
     Order(CreateOrderCommand command) {
         this(command.getName(), Money.zero(), DRAFT);
