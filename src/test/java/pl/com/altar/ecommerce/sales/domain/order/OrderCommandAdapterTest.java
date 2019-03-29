@@ -13,7 +13,7 @@ import pl.com.altar.ecommerce.sales.domain.order.ports.OrderCommandPort;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderFactoryPort;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderQueryPort;
 import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
-import pl.com.altar.ecommerce.sales.infrastructure.repository.OrderRepository;
+import pl.com.altar.ecommerce.sales.infrastructure.model.OrderRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

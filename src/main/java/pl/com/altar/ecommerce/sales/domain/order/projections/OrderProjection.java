@@ -8,7 +8,7 @@ import java.util.List;
 public interface OrderProjection {
     Long getId();
     String getName();
-    Money getPrice();
+    Money getTotalCost();
     String getSerialNumber();
     Timestamp getSubmitDate();
     String getOrderStateName();

@@ -18,7 +18,7 @@ public class ModelMapper {
                 order.getId(),
                 order.getOrderStateName(),
                 order.getName(),
-                order.getPrice().getDenomination(),
+                order.getTotalCost().getDenomination(),
                 order.getSerialNumber()
         );
     }
@@ -43,7 +43,7 @@ public class ModelMapper {
                 order.getId(),
                 order.getOrderStateName(),
                 order.getName(),
-                order.getPrice().getDenomination(),
+                order.getTotalCost().getDenomination(),
                 order.getSerialNumber(),
                 order.getOrderItemProjections()
                         .stream()

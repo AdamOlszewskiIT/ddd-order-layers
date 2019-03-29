@@ -9,7 +9,7 @@ import pl.com.altar.ecommerce.sales.domain.order.ports.OrderCommandPort;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderEventPublisher;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderFactoryPort;
 import pl.com.altar.ecommerce.sales.domain.order.ports.OrderQueryPort;
-import pl.com.altar.ecommerce.sales.infrastructure.repository.OrderRepositoryAdapter;
+import pl.com.altar.ecommerce.sales.infrastructure.model.OrderRepositoryAdapter;
 
 @Configuration
 public class OrderConfiguration {

@@ -1,4 +1,4 @@
-package pl.com.altar.ecommerce.sales.infrastructure.repository;
+package pl.com.altar.ecommerce.sales.infrastructure.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +29,7 @@ public class OrderEntity implements OrderProjection {
     private String name;
 
     @Embedded
-    private Money price = Money.zero();
+    private Money totalCost = Money.zero();
 
     private String serialNumber = UUID.randomUUID().toString();
 
@@ -54,7 +54,7 @@ public class OrderEntity implements OrderProjection {
         this(
                 op.getId(),
                 op.getName(),
-                op.getPrice(),
+                op.getTotalCost(),
                 op.getSerialNumber(),
                 op.getSubmitDate(),
                 op.getOrderStateName(),

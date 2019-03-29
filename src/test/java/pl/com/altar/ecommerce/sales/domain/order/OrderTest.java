@@ -42,7 +42,7 @@ public class OrderTest {
         //then
         assertThat(createdOrder.getOrderItems()).isNotNull();
         assertThat(createdOrder.getOrderItems().size()).isEqualTo(3);
-        assertThat(createdOrder.getPrice()).isEqualTo(new Money(200D));
+        assertThat(createdOrder.getTotalCost()).isEqualTo(new Money(200D));
     }
 
 }

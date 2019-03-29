@@ -1,4 +1,4 @@
-package pl.com.altar.ecommerce.sales.infrastructure.repository;
+package pl.com.altar.ecommerce.sales.infrastructure.model;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

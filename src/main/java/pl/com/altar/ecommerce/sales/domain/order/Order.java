@@ -26,15 +26,15 @@ class Order implements OrderProjection {
     private static final String OPERATION_ALLOWED_ONLY_IN_DRAFT_STATUS = "Operation allowed only in DRAFT status";
     private Long id;
     private String name;
-    private Money price;
+    private Money totalCost;
     private String serialNumber = UUID.randomUUID().toString();
     private Timestamp submitDate;
     private OrderState orderState;
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    private Order(String name, Money price, OrderState orderState) {
+    private Order(String name, Money totalCost, OrderState orderState) {
         this.name = name;
-        this.price = price;
+        this.totalCost = totalCost;
         this.orderState = orderState;
     }
 
@@ -70,8 +70,8 @@ class Order implements OrderProjection {
     }
 
     private void recalculatePrice() {
-        this.price = Money.zero();
-        orderItems.forEach(item -> this.price = this.price.add(item.getTotalPrice()));
+        this.totalCost = Money.zero();
+        orderItems.forEach(item -> this.totalCost = this.totalCost.add(item.getTotalPrice()));
     }
 
     protected void clearOrderItems() {
@@ -102,7 +102,7 @@ class Order implements OrderProjection {
         this(
                 op.getId(),
                 op.getName(),
-                op.getPrice(),
+                op.getTotalCost(),
                 op.getSerialNumber(),
                 op.getSubmitDate(),
                 valueOf(op.getOrderStateName()),

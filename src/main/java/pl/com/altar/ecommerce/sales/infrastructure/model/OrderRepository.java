@@ -1,4 +1,4 @@
-package pl.com.altar.ecommerce.sales.infrastructure.repository;
+package pl.com.altar.ecommerce.sales.infrastructure.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
