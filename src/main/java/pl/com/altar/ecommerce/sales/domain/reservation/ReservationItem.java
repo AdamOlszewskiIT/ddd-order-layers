@@ -11,7 +11,6 @@ import pl.com.altar.ecommerce.shared.annotations.domain.Aggregate;
 @Aggregate
 @AllArgsConstructor
 class ReservationItem implements ReservationItemData {
-
     private Long id;
     private ProductData product;
     private Quantity quantity;
@@ -23,13 +22,11 @@ class ReservationItem implements ReservationItemData {
                 new Quantity(reservationItemData.getQuantityValue())
         );
     }
-
     protected void changeQuantity(Quantity change) {
         this.quantity = new Quantity(
                 quantity.getNumberOfElements() + change.getNumberOfElements())
         ;
     }
-
     @Override
     public Integer getQuantityValue() {
         return quantity.getNumberOfElements();

@@ -2,6 +2,7 @@ package pl.com.altar.ecommerce.sales.domain.purchase;
 
 import lombok.AllArgsConstructor;
 import pl.com.altar.ecommerce.sales.client.command.CreatePurchaseCommand;
+import pl.com.altar.ecommerce.sales.domain.purchase.events.PurchaseCreated;
 import pl.com.altar.ecommerce.sales.domain.purchase.ports.PurchaseFactoryPort;
 import pl.com.altar.ecommerce.sales.domain.purchase.ports.PurchaseRepositoryPort;
 import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseData;
@@ -16,7 +17,8 @@ public class PurchaseFactoryAdapter implements PurchaseFactoryPort {
 
     @Override
     public PurchaseData createPurchase(CreatePurchaseCommand createPurchaseCommand) {
-        var newOrder = new Purchase(createPurchaseCommand);
-        return orderRepository.save(newOrder);
+        var purchase = new Purchase(createPurchaseCommand);
+        domainEventPublisher.publish(new PurchaseCreated(purchase));
+        return orderRepository.save(purchase);
     }
 }

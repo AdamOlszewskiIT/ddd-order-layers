@@ -8,8 +8,6 @@ import pl.com.altar.ecommerce.sales.domain.client.projections.ClientData;
 import pl.com.altar.ecommerce.sales.domain.equivalent.SuggestionService;
 import pl.com.altar.ecommerce.sales.domain.product.ports.ProductRepositoryPort;
 import pl.com.altar.ecommerce.sales.domain.product.projections.ProductData;
-import pl.com.altar.ecommerce.sales.domain.purchase.ports.PurchaseCommandPort;
-import pl.com.altar.ecommerce.sales.domain.purchase.ports.PurchaseFactoryPort;
 import pl.com.altar.ecommerce.sales.domain.reservation.ports.ReservationCommandPort;
 import pl.com.altar.ecommerce.sales.domain.reservation.ports.ReservationFactoryPort;
 import pl.com.altar.ecommerce.sales.domain.reservation.projections.ReservationData;
@@ -22,8 +20,6 @@ import pl.com.altar.ecommerce.system.SystemContext;
 public class OrderingService implements OrderingServicePort {
 
     private final ClientRepositoryPort clientRepositoryPort;
-    private final PurchaseCommandPort purchaseCommandPort;
-    private final PurchaseFactoryPort purchaseFactoryPort;
     private final SuggestionService suggestionService;
     private final ProductRepositoryPort productRepositoryPort;
     private final ReservationFactoryPort reservationFactoryPort;

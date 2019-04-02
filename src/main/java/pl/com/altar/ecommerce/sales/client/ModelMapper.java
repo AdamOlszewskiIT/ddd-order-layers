@@ -4,8 +4,8 @@ package pl.com.altar.ecommerce.sales.client;
 import pl.com.altar.ecommerce.sales.client.vm.OrderDetailsVM;
 import pl.com.altar.ecommerce.sales.client.vm.OrderItemVM;
 import pl.com.altar.ecommerce.sales.client.vm.OrderVM;
-import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseItemData;
 import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseData;
+import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseItemData;
 
 import java.util.List;
 import java.util.stream.Collectors;

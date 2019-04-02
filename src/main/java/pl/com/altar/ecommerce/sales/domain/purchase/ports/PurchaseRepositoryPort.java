@@ -7,8 +7,8 @@ import java.util.List;
 
 @DomainRepository
 public interface PurchaseRepositoryPort {
-    PurchaseData save(PurchaseData order);
-    PurchaseData findById(Long id);
+    PurchaseData save(PurchaseData purchase);
+    PurchaseData findById(Long purchaseId);
     List<PurchaseData> findAll();
     void deleteAll();
     Long count();

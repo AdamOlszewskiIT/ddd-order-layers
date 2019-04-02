@@ -3,10 +3,8 @@ package pl.com.altar.ecommerce.sales.infrastructure.persistence.reservation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.com.altar.ecommerce.sales.domain.product.projections.ProductData;
 import pl.com.altar.ecommerce.sales.domain.reservation.projections.ReservationItemData;
 import pl.com.altar.ecommerce.sales.infrastructure.persistence.product.ProductEntity;
-import pl.com.altar.ecommerce.shared.Quantity;
 
 import javax.persistence.*;
 

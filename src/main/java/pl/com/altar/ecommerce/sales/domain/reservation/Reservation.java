@@ -39,7 +39,6 @@ class Reservation implements ReservationData {
         );
         this.items = parse(reservationData.getItemsProjections());
     }
-
     protected void add(ProductData productData, Quantity quantity) {
         checkIfProductIsNotClosed(isClosed());
         checkIfProductIsAvailable(productData.isAvailable());
@@ -89,20 +88,15 @@ class Reservation implements ReservationData {
             }
         });
     }
-    private Money calculateItemCost(ReservationItem item){
-        return item.getProduct().getPrice().multiplyBy(item.getQuantity().getNumberOfElements());
-    }
     private List<ReservationItem> parse(List<ReservationItemData> reservationItemData) {
         return reservationItemData.stream()
                 .map(ReservationItem::new)
                 .collect(Collectors.toList());
     }
-
     @Override
     public String getStatusName() {
         return this.status.name();
     }
-
     @Override
     public List<ReservationItemData> getItemsProjections() {
         return new ArrayList<>(this.items);

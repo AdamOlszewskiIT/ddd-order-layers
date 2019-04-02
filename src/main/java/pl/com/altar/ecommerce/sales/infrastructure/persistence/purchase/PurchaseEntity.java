@@ -3,8 +3,8 @@ package pl.com.altar.ecommerce.sales.infrastructure.persistence.purchase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseItemData;
 import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseData;
+import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseItemData;
 import pl.com.altar.ecommerce.shared.Money;
 
 import javax.persistence.*;

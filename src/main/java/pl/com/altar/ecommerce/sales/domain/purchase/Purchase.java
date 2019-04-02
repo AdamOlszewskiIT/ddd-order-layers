@@ -42,7 +42,7 @@ class Purchase implements PurchaseData {
         this(command.getName(), Money.zero(), DRAFT);
     }
 
-    protected void addItem(AddItemCommand command) {
+    protected PurchaseItem addItem(AddItemCommand command) {
         checkIfDraft();
         final var newItem = new PurchaseItem(
                 command.getName(),
@@ -51,6 +51,7 @@ class Purchase implements PurchaseData {
         );
         this.purchaseItems.add(newItem);
         recalculatePrice();
+        return newItem;
     }
 
     protected void submit() {

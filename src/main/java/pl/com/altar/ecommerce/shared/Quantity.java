@@ -4,7 +4,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import javax.persistence.Embeddable;
-import java.util.Objects;
 
 @Getter
 @Embeddable
