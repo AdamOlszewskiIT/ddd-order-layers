@@ -4,8 +4,8 @@ package pl.com.altar.ecommerce.sales.client;
 import pl.com.altar.ecommerce.sales.client.vm.OrderDetailsVM;
 import pl.com.altar.ecommerce.sales.client.vm.OrderItemVM;
 import pl.com.altar.ecommerce.sales.client.vm.OrderVM;
-import pl.com.altar.ecommerce.sales.domain.order.projections.OrderItemProjection;
-import pl.com.altar.ecommerce.sales.domain.order.projections.OrderProjection;
+import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseItemData;
+import pl.com.altar.ecommerce.sales.domain.purchase.projections.PurchaseData;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class ModelMapper {
 
 
-    public static OrderVM map(OrderProjection order) {
+    public static OrderVM map(PurchaseData order) {
         return new OrderVM(
                 order.getId(),
                 order.getOrderStateName(),
@@ -23,13 +23,13 @@ public class ModelMapper {
         );
     }
 
-    public static List<OrderVM> map(List<OrderProjection> orderProjections) {
-        return orderProjections.stream()
+    public static List<OrderVM> map(List<PurchaseData> purchaseData) {
+        return purchaseData.stream()
                 .map(ModelMapper::map)
                 .collect(Collectors.toList());
     }
 
-    public static OrderItemVM map(OrderItemProjection item) {
+    public static OrderItemVM map(PurchaseItemData item) {
         return new OrderItemVM(
                 item.getId(),
                 item.getName(),
@@ -38,7 +38,7 @@ public class ModelMapper {
         );
     }
 
-    public static OrderDetailsVM mapDetails(OrderProjection order) {
+    public static OrderDetailsVM mapDetails(PurchaseData order) {
         return new OrderDetailsVM(
                 order.getId(),
                 order.getOrderStateName(),

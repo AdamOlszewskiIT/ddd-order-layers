@@ -1,12 +1,14 @@
 package pl.com.altar.ecommerce.shared;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import javax.persistence.Embeddable;
 import java.util.Objects;
 
-@Embeddable
 @Getter
+@Embeddable
+@EqualsAndHashCode
 public final class Quantity {
     private final Integer numberOfElements;
 
@@ -19,18 +21,5 @@ public final class Quantity {
             throw new IllegalArgumentException("Number of elements cannot be lower than 0");
         }
         this.numberOfElements = numberOfElements;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Quantity quantity = (Quantity) o;
-        return Objects.equals(numberOfElements, quantity.numberOfElements);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(numberOfElements);
     }
 }

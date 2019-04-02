@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.com.altar.ecommerce.sales.client.vm.OrderDetailsVM;
 import pl.com.altar.ecommerce.sales.client.vm.OrderVM;
-import pl.com.altar.ecommerce.sales.domain.order.ports.OrderQueryPort;
+import pl.com.altar.ecommerce.sales.domain.purchase.ports.PurchaseQueryPort;
 
 import java.util.List;
 
@@ -19,18 +19,18 @@ import java.util.List;
 @AllArgsConstructor
 public class OrderQueryController {
 
-    private final OrderQueryPort orderQueryPort;
+    private final PurchaseQueryPort purchaseQueryPort;
 
 
     @GetMapping
     public ResponseEntity<List<OrderVM>> getAllOrders() {
-        final var orderList = orderQueryPort.findAll();
+        final var orderList = purchaseQueryPort.findAll();
         return new ResponseEntity<>(ModelMapper.map(orderList), HttpStatus.OK);
     }
 
     @GetMapping("/{orderId}")
     public ResponseEntity<OrderDetailsVM> getOrder(@PathVariable Long orderId) {
-        final var orderVM = orderQueryPort.findOrder(orderId);
+        final var orderVM = purchaseQueryPort.findPurchase(orderId);
         return new ResponseEntity<>(ModelMapper.mapDetails(orderVM), HttpStatus.OK);
     }
 
