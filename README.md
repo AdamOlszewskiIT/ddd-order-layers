@@ -1,9 +1,9 @@
-# DDD E-Commerce - based on https://github.com/BottegaIT/ddd-leaven-v2
+# DDD E-Commerce
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ebd3f4bb57384e5b9813b4aa05f3fc4c)](https://www.codacy.com/app/AdamOlszewskiIT/ddd-order-layers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AdamOlszewskiIT/ddd-order-layers&amp;utm_campaign=Badge_Grade)
 
 ## Introduction
 
-This project shows DDD approach to build e-commerce application with the the four layers architecture. Application is divided into three main bounded contexts, i.e. 
+This project shows DDD approach to build e-commerce application with the the layered architecture. Application is divided into three main bounded contexts, i.e. 
 *   **Sales**,
 *   **Shipping**,
 *   **CRM**.
@@ -12,14 +12,14 @@ This project shows DDD approach to build e-commerce application with the the fou
 ## Architecture
 ![Layered architecture](./resources/layered.png?raw=true)
 
-Each bounded context is divided into four layers which are show on the picture above, i.e.
+Each bounded context is divided into four layers which are shown on the picture above, i.e.
 *   **Client**,
 *   **Application**,
 *   **Domain**,
 *   **Infrastructure**.
 
 ### Client
-Client layer allow to communicate with application in CQRS style. To change state of application Client must receive valid command object.
+Client layer allows to communicate with application in CQRS style. To change state of application Client must receive valid command object.
 
 To read state of application Client must receive a valid query object.
 
@@ -58,3 +58,5 @@ and now you can run this image by
 To build this application to docker image and run it with docker-compose run in console
 
     docker-compose up -d --build
+
+### Project based on https://github.com/BottegaIT/ddd-leaven-v2
