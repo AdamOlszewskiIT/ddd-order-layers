@@ -1,4 +1,4 @@
-# DDD E-Commerce
+# DDD E-Commerce - based on https://github.com/BottegaIT/ddd-leaven-v2
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ebd3f4bb57384e5b9813b4aa05f3fc4c)](https://www.codacy.com/app/AdamOlszewskiIT/ddd-order-layers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AdamOlszewskiIT/ddd-order-layers&amp;utm_campaign=Badge_Grade)
 
 ## Introduction
