@@ -13,7 +13,6 @@ import static pl.com.altar.ecommerce.sales.client.ClientMesages.*;
 @Validated
 @AllArgsConstructor
 public class AddProductToOrderCommand {
-
     @NotNull(message = ORDER_ID_SHOULD_NOT_BE_EMPTY)
     private Long orderId;
     @NotNull(message = PRODUCT_ID_SHOULD_NOT_BE_EMPTY)
